@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Tags -->
+  <title>Cloves — Kassia Naturals | Warm & Aromatic Western Ghats Buds</title>
+  <meta name="description" content="Hand-picked buds from the Western Ghats — high in volatile oil and eugenol. Single-origin Kerala spice with certificate of analysis.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Slabo+27px&display=swap" rel="stylesheet">
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="css/style.css?v=20260914v5">
+  
+  <!-- SVG Favicon / Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  
+  <style>
+    /* Spices Overview Intro Banner */
+    .spices-intro-banner {
+      padding-top: calc(var(--header-height) + 2.5rem);
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .spices-intro-content {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .spices-intro-lead {
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .spices-intro-sub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 1.05rem;
+      color: var(--color-muted);
+    }
+    .cert-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(220, 239, 217, 0.12);
+      border: 1px solid rgba(220, 239, 217, 0.25);
+      color: var(--accent-cardamom);
+      padding: 0.55rem 1.35rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Switcher Navigation */
+    .bento-switcher-section {
+      padding: 1.5rem 0;
+      position: sticky;
+      top: var(--header-height);
+      z-index: 100;
+      background: rgba(6, 71, 52, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .bento-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 0.85rem;
+      overflow-x: auto;
+      padding: 0.25rem 0.5rem;
+      scrollbar-width: none;
+    }
+    .bento-switcher::-webkit-scrollbar {
+      display: none;
+    }
+    .bento-switcher-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.6rem 1.4rem 0.6rem 0.65rem;
+      border-radius: 100px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .bento-switcher-item:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+    .bento-switcher-item.active {
+      background: #ffffff !important;
+      border-color: #ffffff !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+      transform: translateY(-2px);
+    }
+    .bento-switcher-item.active .bento-switcher-title {
+      color: #064734 !important;
+      -webkit-text-fill-color: #064734 !important;
+    }
+    .bento-switcher-item.active .bento-switcher-subtitle {
+      color: #1a4d3b !important;
+      -webkit-text-fill-color: #1a4d3b !important;
+    }
+    .bento-switcher-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .bento-switcher-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .bento-switcher-title {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .bento-switcher-subtitle {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Bento Hero */
+    .bento-hero {
+      padding: 3.5rem 0 3rem;
+      position: relative;
+    }
+    .bento-hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .bento-hero-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .bento-hero-title {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      color: #ffffff;
+    }
+    .bento-hero-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: var(--accent-cardamom);
+      margin-bottom: 2.25rem;
+      max-width: 600px;
+    }
+    .bento-hero-actions {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .bento-hero-image-wrap {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      aspect-ratio: 4 / 3;
+      background: #0b1510;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+    .bento-hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .bento-hero-image-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Bento Grid Details */
+    .bento-grid-section {
+      padding: 3rem 0 5rem;
+    }
+    .bento-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+    .bento-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .bento-card-header {
+      margin-bottom: 1.25rem;
+    }
+    .bento-card-header .eyebrow {
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+    }
+    .bento-card-header h3 {
+      font-size: 1.7rem;
+      margin-bottom: 0;
+      color: #ffffff;
+    }
+    .bento-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-muted);
+      margin-bottom: 0;
+    }
+    
+    /* Spans */
+    .col-span-7 { grid-column: span 7; }
+    .col-span-5 { grid-column: span 5; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-8 { grid-column: span 8; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-12 { grid-column: span 12; }
+
+    /* Flavour Card Accent */
+    .card-flavour {
+      background: linear-gradient(135deg, rgba(222, 143, 98, 0.15) 0%, rgba(6, 71, 52, 0.6) 100%);
+      border-color: rgba(222, 143, 98, 0.3);
+    }
+    .card-flavour .eyebrow {
+      color: var(--accent-cinnamon);
+    }
+
+    /* Specifications Table Card */
+    .card-specs {
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .spec-label {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-cardamom);
+    }
+    .spec-value {
+      font-size: 1.05rem;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+    .spec-cert-banner {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--accent-cardamom);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Uses Tiles Grid */
+    .uses-tiles-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+    .use-tile {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.25rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 100px;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+    .use-tile:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: var(--accent-cardamom);
+      transform: translateY(-2px);
+    }
+
+    /* Visual Image Bento Items */
+    .bento-img-card {
+      padding: 0;
+      overflow: hidden;
+      min-height: 320px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .bento-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .bento-img-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Beyond Range Section */
+    .beyond-range-section {
+      padding: 2rem 0 5rem;
+    }
+    .beyond-range-card {
+      background: linear-gradient(135deg, rgba(232, 193, 99, 0.12) 0%, rgba(6, 71, 52, 0.5) 100%);
+      border: 1px solid rgba(232, 193, 99, 0.3);
+      border-radius: 28px;
+      padding: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .beyond-range-text {
+      max-width: 750px;
+    }
+    .beyond-range-text h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .beyond-range-text p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--color-muted);
+      margin-bottom: 0;
+    }
+    .beyond-range-action {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 991px) {
+      .bento-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .bento-hero-image-wrap {
+        min-height: 280px;
+        max-width: 100%;
+      }
+      .col-span-7, .col-span-5, .col-span-6, .col-span-8, .col-span-4, .col-span-12 {
+        grid-column: span 12;
+      }
+      .beyond-range-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.75rem;
+      }
+      .bento-switcher {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body class="inner-page">
+
+  <!-- Floating Logo Badge -->
+  <a href="index.html" class="logo-badge" aria-label="Kassia Naturals Home">
+    <img src="assets/logo.webp" alt="Kassia Naturals" class="site-logo">
+  </a>
+
+  <!-- Global Header / Navigation -->
+  <header>
+    <div class="container nav-container">
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="product-cardamom.html" class="active">Spices</a></li>
+          <li class="nav-item"><a href="story.html">Our Story</a></li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Spices Category Intro Banner -->
+    <section class="spices-intro-banner">
+      <div class="container">
+        <div class="spices-intro-content reveal-up">
+          <span class="eyebrow"><span class="heading-first-half">OUR</span> <span class="heading-second-half">SPICES</span></span>
+          <p class="spices-intro-lead">Five spices from the Idukki hills and Kerala’s Western Ghats: green cardamom, black pepper, cloves, cassia cinnamon and dried ginger. These are our core range — the spices we focus on and know best.</p>
+          <div class="spices-intro-sub">
+            <p>We can also source other spices on enquiry. If you need something beyond the five below, tell us the specification and we’ll explore it through our sourcing.</p>
+            <div class="cert-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Every consignment ships with an independent certificate of analysis.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horizontal Bento Switcher -->
+    <section class="bento-switcher-section">
+      <div class="container">
+        <nav class="bento-switcher" aria-label="Spice Navigator">
+          <a href="product-cardamom.html" class="bento-switcher-item">
+            <img src="assets/spice_cardamom.webp?v=20260914v2" alt="Green Cardamom" class="bento-switcher-img">
+            <div class="bento-switcher-text">
+              <span class="bento-switcher-title">Green Cardamom</span>
+              <span class="bento-switcher-subtitle">Queen of Spices</span>
+            </div>
+          </a>
+          <a href="product-pepper.html" class="bento-switcher-item">
+            <img src="assets/spice_pepper.webp" alt="Black Pepper" class="bento-switcher-img">
+            <div class="bento-switcher-text">
+              <span class="bento-switcher-title">Black Pepper</span>
+              <span class="bento-switcher-subtitle">King of Spices</span>
+            </div>
+          </a>
+          <a href="product-cloves.html" class="bento-switcher-item active">
+            <img src="assets/spice_cloves.webp" alt="Cloves" class="bento-switcher-img">
+            <div class="bento-switcher-text">
+              <span class="bento-switcher-title">Cloves</span>
+              <span class="bento-switcher-subtitle">Warm & Aromatic</span>
+            </div>
+          </a>
+          <a href="product-cinnamon.html" class="bento-switcher-item">
+            <img src="assets/spice_cinnamon.webp" alt="Cinnamon (Cassia)" class="bento-switcher-img">
+            <div class="bento-switcher-text">
+              <span class="bento-switcher-title">Cinnamon (Cassia)</span>
+              <span class="bento-switcher-subtitle">Warm & Sweet</span>
+            </div>
+          </a>
+          <a href="product-ginger.html" class="bento-switcher-item">
+            <img src="assets/spice_ginger.webp" alt="Dried Ginger" class="bento-switcher-img">
+            <div class="bento-switcher-text">
+              <span class="bento-switcher-title">Dried Ginger</span>
+              <span class="bento-switcher-subtitle">Earthy & Pungent</span>
+            </div>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Product Detail Hero -->
+    <section class="bento-hero">
+      <div class="container bento-hero-grid">
+        <!-- Details Column -->
+        <div class="bento-hero-details reveal-up">
+          <span class="eyebrow"><span class="heading-first-half">WARM & AROMATIC</span> <span class="heading-second-half">· SYZYGIUM AROMATICUM</span></span>
+          <h1 class="bento-hero-title">Cloves</h1>
+          <p class="bento-hero-subtitle">Hand-picked buds from the Western Ghats — high in volatile oil and eugenol.</p>
+          <div class="bento-hero-actions">
+            <a href="contact.html" class="btn btn-primary">Make an enquiry</a>
+            <a href="story.html" class="btn btn-secondary">Trace Origin</a>
+          </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="bento-hero-image-wrap reveal-up">
+          <img src="assets/spice_cloves.webp" alt="Cloves">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-grid-section">
+      <div class="container">
+        <div class="bento-grid-layout">
+          
+          <!-- Grown & Processed Card -->
+          <div class="bento-card col-span-7 reveal-up">
+            <div class="bento-card-header">
+              <span class="eyebrow"><span class="heading-first-half">ORIGIN &</span> <span class="heading-second-half">PROCESS</span></span>
+              <h3>Harvest & Timing</h3>
+            </div>
+            <p>Cloves are the unopened flower buds of an evergreen, picked in the narrow window before they bloom. Timing is everything: too early and the bud is underdeveloped, too late and it opens and the oil is lost. They are sun-dried until deep brown and hard, then sorted to remove stems and headless buds.</p>
+          </div>
+
+          <!-- Flavour Profile Card -->
+          <div class="bento-card card-flavour col-span-5 reveal-up">
+            <div class="bento-card-header">
+              <span class="eyebrow"><span class="heading-first-half">TASTING</span> <span class="heading-second-half">NOTES</span></span>
+              <h3>Flavour</h3>
+            </div>
+            <p>Warm, sweet and pungent, with a faint numbing finish.</p>
+          </div>
+
+          <!-- At a Glance Technical Specs Card -->
+          <div class="bento-card card-specs col-span-7 reveal-up">
+            <div class="bento-card-header">
+              <span class="eyebrow"><span class="heading-first-half">SPECIFICATIONS</span></span>
+              <h3>At a glance</h3>
+            </div>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Botanical name</span>
+                <span class="spec-value"><em>Syzygium aromaticum</em></span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Origin</span>
+                <span class="spec-value">Western Ghats, Kerala, India</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Grades</span>
+                <span class="spec-value">Hand-Picked Selected (HPS) · Grade 1 · Grade 2</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Formats</span>
+                <span class="spec-value">Whole buds</span>
+              </div>
+            </div>
+            <div class="spec-cert-banner">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+              <span>Full specification and an independent certificate of analysis provided with each consignment.</span>
+            </div>
+          </div>
+
+          <!-- Visual Gallery Image 1 -->
+          <div class="bento-card bento-img-card col-span-5 reveal-up">
+            <img src="assets/cloves_1.webp" alt="Harvesting Clove Buds in Western Ghats">
+          </div>
+
+          <!-- Visual Gallery Image 2 -->
+          <div class="bento-card bento-img-card col-span-5 reveal-up">
+            <img src="assets/cloves_2.webp" alt="Sorting and Sun-Drying Clove Buds">
+          </div>
+
+          <!-- Uses Rendered as Tiles -->
+          <div class="bento-card col-span-7 reveal-up">
+            <div class="bento-card-header">
+              <span class="eyebrow"><span class="heading-first-half">APPLICATIONS</span></span>
+              <h3>Uses</h3>
+            </div>
+            <div class="uses-tiles-grid">
+              <span class="use-tile">Masala & spice blends</span>
+              <span class="use-tile">Mulled wine & chai</span>
+              <span class="use-tile">Hams & roasts</span>
+              <span class="use-tile">Seasonal bakery</span>
+              <span class="use-tile">Biryani & rice</span>
+              <span class="use-tile">Pickling spice</span>
+              <span class="use-tile">Clove oil & eugenol</span>
+              <span class="use-tile">Perfumery</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond Our Core Range Section -->
+    <section class="beyond-range-section">
+      <div class="container">
+        <div class="beyond-range-card reveal-up">
+          <div class="beyond-range-text">
+            <span class="eyebrow" style="color: var(--accent-cinnamon);"><span class="heading-first-half">SOURCING</span> <span class="heading-second-half">ON DEMAND</span></span>
+            <h2>Beyond our core range</h2>
+            <p>The five spices above are our focus, not our limit. If you’re sourcing other spices from the region, send us the specification and we’ll explore it through our sourcing network.</p>
+          </div>
+          <div class="beyond-range-action">
+            <a href="contact.html" class="btn btn-primary">Make an enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo" aria-label="Kassia Naturals Home">Kassia Naturals</a>
+        <p class="footer-tagline">Single-origin Kerala spices, traceable to source.</p>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-brand-info">
+          <img src="assets/company.jpeg" alt="Rari & Co. Pvt Ltd" class="footer-company-logo">
+          <p class="footer-legal">Kassia Naturals is a brand of Rari & Co., Kerala, India. &copy; 2026 Rari & Co. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product-cardamom.html">Products</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/main.js?v=12379"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/particles-config.js?v=13"></script>
+</body>
+</html>
