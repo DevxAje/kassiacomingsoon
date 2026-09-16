@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# kassiacomingsoon
-=======
 # Kassia Naturals — Single-Origin Kerala Spices
 
 A modern, high-performance web experience for **Kassia Naturals** (a brand of Rari & Co. Pvt Ltd), showcasing single-origin Kerala spices sourced directly from the Western Ghats and Idukki high ranges.
@@ -90,4 +87,3 @@ npx serve .
 ## 📜 License & Copyright
 
 &copy; 2026 Rari & Co. Private Limited. All rights reserved.
->>>>>>> ccf43e6 (Initial commit of site files)
